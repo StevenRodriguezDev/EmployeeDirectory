@@ -1,3 +1,6 @@
+/* modal window  */
+
+
 body {
     position: relative;
 }
@@ -31,4 +34,4 @@ body {
 
 .hidden {
     display: none;
-    }
+}
