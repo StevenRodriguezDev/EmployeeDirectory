@@ -74,6 +74,45 @@ gridContainer.addEventListener('click', e => {
         const card = e.target.closest(".card");
         const index = card.getAttribute('data-index');
         
-        displayModal(index);
+        displayModal(index)   
     }
+});
+
+
+modalClose.addEventListener('click', () => {
+    overlay.classList.add('hidden')
+
+});
+
+overlay.addEventListener('click', () => {
+    overlay.classList.add('hidden')
+});
+
+// window.onclick = function(event) {
+//     if (event.target == overlay) {
+//        overlay.style.display = "none";
+//     };
+// }
+
+
+
+
+arrowLeft.addEventListener('click', e =>{
+    if(modalIndex > 0){
+        modalIndex --;
+        displayModal(modalIndex)
+    } else {
+        modalIndex = 11;
+        displayModal(modalIndex);
+    }
+});
+
+arrowRight.addEventListener('click', e =>{
+    if(modalIndex < 11){
+        modalIndex ++;
+        displayModal(modalIndex)
+    } else { 
+        modalIndex = 0;
+        displayModal(modalIndex);
+    } 
 });
