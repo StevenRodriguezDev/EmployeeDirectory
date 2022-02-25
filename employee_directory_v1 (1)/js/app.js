@@ -2,7 +2,7 @@
 let employees = [];
 const urlAPI = 
 `https://randomuser.me/api/?results=12&inc=name, picture,
-email, location, phone, dob &noinfo &nat=US`
+email, location,street,phone,dob &noinfo &nat=US`
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
@@ -53,7 +53,7 @@ function displayModal(index){
     // use object destructuring make our template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = employees[index];
     let date = new Date(dob.date);
-   
+  
     const modalHTML=`
         <img class="avatar" src="${picture.large}"/>
         <div class="text-container">
@@ -62,7 +62,7 @@ function displayModal(index){
             <p class="address">${city}</p>
             <hr>
             <p>${phone}</p>
-            <p class="address">${street}, ${state} ${postcode}</p>
+            <p class="address">${street.number} ${street.name}, ${city} ${state} ${postcode}</p>
             <p>Birthday:
             ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
