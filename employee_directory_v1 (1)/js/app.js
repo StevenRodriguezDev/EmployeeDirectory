@@ -119,20 +119,20 @@ nextArrow.addEventListener('click', (e) =>{
 
 // search bar
 
-const searchHandler = event => {
-    const cardName = document.querySelectorAll('h2.name');
-    const searchTerm = event.target.value.toLowerCase();
+// const searchHandler = event => {
+//     const cardName = document.querySelectorAll('h2.name');
+//     const searchTerm = event.target.value.toLowerCase();
 
-    cardName.forEach( cardName => {
-        const cardText = cardName.textContent.toLowerCase();
-        const card = cardName.parentElement.parentElement;
+//     cardName.forEach( cardName => {
+//         const cardText = cardName.textContent.toLowerCase();
+//         const card = cardName.parentElement.parentElement;
 
-        if (cardText.includes(searchTerm)) {
-            card.style.display = "";
-        } else {
-            card.style.display ="none";
-        }
-    });
-}
-search.addEventListener('keyup', searchHandler);
+//         if (cardText.includes(searchTerm)) {
+//             card.style.display = "";
+//         } else {
+//             card.style.display ="none";
+//         }
+//     });
+// }
+// search.addEventListener('keyup', searchHandler);
 
